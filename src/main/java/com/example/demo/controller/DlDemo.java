@@ -9,5 +9,6 @@ public static void main(String[] args) {
     System.out.println("idea本地新增1");
     System.out.println("idea本地dev新增1");
     System.out.println("idea本地master新增1");
+    System.out.println("idea本地dev新增2");
 }
 }
