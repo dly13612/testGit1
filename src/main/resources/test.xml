@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<base>
+  <time_stamp>20200821</time_stamp>
+  <b_content>
+    <pareobj>
+      <idcardnumber>456787654</idcardnumber>
+      <createtime>20150618191221</createtime>
+      <tokenid/>
+      <telephonenumber>13*******21</telephonenumber>
+      <mail>ceshi@123.com</mail>
+      <usertype>2</usertype>
+      <cn>单位用户2</cn>
+      <creditable_level_of_account_way>L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75</creditable_level_of_account_way>
+      <idcardtype>50</idcardtype>
+      <uid>mayintao</uid>
+      <realtype>DC</realtype>
+      <link_person_name>联系人2</link_person_name>
+      <useridcode>75c91fagrr2e67d4a169cfmc8735ctrf</useridcode>
+      <isreal>true</isreal>
+      <creditable_level_of_account>L3</creditable_level_of_account>
+    </pareobj>
+    <userobj>
+      <idcardnumber>11***************23</idcardnumber>
+      <createtime>20150618191221</createtime>
+      <tokenid/>
+      <telephonenumber>13*******21</telephonenumber>
+      <mail>ceshi@123.com</mail>
+      <usertype>2</usertype>
+      <cn>法人用户2</cn>
+      <creditable_level_of_account_way>L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75</creditable_level_of_account_way>
+      <idcardtype>10</idcardtype>
+      <uid>ma000</uid>
+      <realtype>DC</realtype>
+      <link_person_name>联系人2</link_person_name>
+      <useridcode>38c97fa1ee2e43d4a664cffc4554cde4</useridcode>
+      <isreal>true</isreal>
+      <creditable_level_of_account>L3</creditable_level_of_account>
+    </userobj>
+    <user_creditable_level>
+      <creditable_level_of_account_way_list>
+        <identity_level>L2</identity_level>
+        <way_code>YSS</way_code>
+        <credential_no>44088******75</credential_no>
+        <user_name>郭**</user_name>
+        <auth_time>2018-02-28 16:45:26</auth_time>
+        <auth_identification>2088******653</auth_identification>
+        <uniqueid>***86f93fb61***</uniqueid>
+      </creditable_level_of_account_way_list>
+      <creditable_level_of_account_way_list>
+        <identity_level>L0</identity_level>
+        <way_code>IDV</way_code>
+        <credential_no>44088******75</credential_no>
+        <user_name>郭**</user_name>
+        <auth_time/>
+        <auth_identification>44088******75</auth_identification>
+        <uniqueid>***764486f93fb61212***</uniqueid>
+      </creditable_level_of_account_way_list>
+      <creditable_level_of_account_way_list>
+        <identity_level>L3</identity_level>
+        <way_code>GW</way_code>
+        <credential_no>44088******75</credential_no>
+        <user_name>郭**</user_name>
+        <auth_time>2018-02-13 17:12:31</auth_time>
+        <auth_identification>44088******75</auth_identification>
+        <uniqueid>*****764486f93fb612122*****</uniqueid>
+      </creditable_level_of_account_way_list>
+      <creditable_level_of_account_way>L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75</creditable_level_of_account_way>
+      <creditable_level_of_account>L3</creditable_level_of_account>
+    </user_creditable_level>
+    <sdata>Ps/DPJnZZPN6QQJQodY3+hK6PWCF3/2oi3DJPnFEXgKDrXX5rHT7q/I0nQPAruuBbQRfErnenQNvPpbf/lXl690qtye0/ZEuDs0ByFdFAGffQalB+Ij3lLUMDPz=</sdata>
+  </b_content>
+  <version>v1</version>
+  <sign>rxf0MFT7eQqYgYKWtgzNBi6mhS2tbqkPgI</sign>
+</base>

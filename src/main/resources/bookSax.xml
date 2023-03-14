@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<books>
+	<book id="1">
+		<name>JAVA就业培训教材</name>
+		<author>张孝祥</author>
+		<price>39.00</price>
+		<tags>Java,Network</tags>
+	</book>
+	<book id="2">
+		<name>SaxJDK7.0全解</name>
+		<author>哈哈</author>
+		<price>90.00</price>
+		<tags>Java2,Network2</tags>
+	</book>
+</books>

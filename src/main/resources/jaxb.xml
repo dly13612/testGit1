@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<message>
+    <fromUserName>form名称2</fromUserName>
+    <msgId>id2</msgId>
+    <msgType>type2</msgType>
+    <toUserName>to名称2</toUserName>
+</message>
+

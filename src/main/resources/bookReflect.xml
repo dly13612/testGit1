@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+    <book id="p0001" bookcategory="文艺" amount="150" remain="80" discount="8.5">
+        <title>三国演义</title>
+        <author>罗贯中</author>
+        <publisher>文艺出版社</publisher>
+        <ISBN>0-764-58007-8</ISBN>
+        <price>80</price>
+    </book>
+    <book id="p0002" bookcategory="文艺" amount="300" remain="180" discount="8.7">
+        <title>红楼梦</title>
+        <author>曹雪芹</author>
+        <publisher>三秦出版社</publisher>
+        <ISBN>7805468397</ISBN>
+        <price>22</price>
+    </book>
+    <book id="p0003" bookcategory="文艺" amount="200" remain="175" discount="8.5">
+        <title>西游记(上下册)</title>
+        <author>吴承恩</author>
+        <publisher>人民文学出版社</publisher>
+        <ISBN>7020008739</ISBN>
+        <price>40.12</price>
+    </book>
+    <book id="p0189" bookcategory="计算机" amount="230" remain="160" discount="8.0">
+        <title>VB.NET程序设计语言</title>
+        <author>微软公司著</author>
+        <publisher>高等教育出版社</publisher>
+        <ISBN>7-04-013188-9</ISBN>
+        <price>86.00</price>
+    </book>
+    <book id="p0028" bookcategory="计算机" amount="100" remain="90" discount="7.5">
+        <title>JavaScript速成教程</title>
+        <author>Michael Moncur著</author>
+        <publisher>机械工业出版社</publisher>
+        <ISBN>7-111-09070-5</ISBN>
+        <price>28.00</price>
+    </book>
+</books>
