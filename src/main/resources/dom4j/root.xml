@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<childNodes>
+    <childNode>
+        <file name="张三" desc="凡人一个">
+            <incloud src="root1.xml"/>
+        </file>
+        <file name="李四" desc="职场人">
+            <incloud src="root2.xml"/>
+        </file>
+    </childNode>
+</childNodes>

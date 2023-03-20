@@ -37,6 +37,7 @@ public class XmlUtils {
         StringWriter writer = null;
         try {
             JAXBContext context = JAXBContext.newInstance(obj.getClass());
+            //创建一个可以用来将XML数据转换为java内容树的Unmarshaller对象.
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, format);
             marshaller.setProperty(Marshaller.JAXB_ENCODING, encoding);
@@ -69,11 +70,18 @@ public class XmlUtils {
         if (xml == null || xml.equals(""))
             return null;
         T t = null;
+        //字符输入流
         StringReader reader = null;
         try {
+            //获得JAXBContext实例
             JAXBContext context = JAXBContext.newInstance(c);
+            //创建一个可以用来将XML数据转换为java内容树的Unmarshaller对象.
             Unmarshaller unmarshaller = context.createUnmarshaller();
             reader = new StringReader(xml);
+//            XMLWriter writer = new XMLWriter();
+            //写入给定的对象，该对象应该是字符串、节点或节点列表
+//            Document
+//            writer.write();
             t = (T) unmarshaller.unmarshal(reader);
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<childNode>
+    <file name="妈妈提供想法2" desc="妈妈的心头肉2">
+        <options>
+            <option leavl="leavl2" name="name2"/>
+            <option leavl="leavl22" name="name22"/>
+        </options>
+        <childNode>
+            <file name="妈妈的构思2" desc="妈妈心血2"/>
+            <File name="爸爸拍板22" desc="爸爸的期盼22"/>
+        </childNode>
+    </file>
+    <file name="爸爸拍板的名字12" desc="爸爸的骄傲12"/>
+</childNode>

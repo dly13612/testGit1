@@ -1,10 +1,10 @@
 package com.example.demo.xmlParser.jackson;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.InputStream;
-import java.util.List;
 
 /**
  * 适合单个bean对象，不适合list
@@ -16,6 +16,6 @@ public class JacksonXml {
         JacksonXmlModule module = new JacksonXmlModule();
         XmlMapper mapper = new XmlMapper(module);
         Book book = mapper.readValue(input, Book.class);
-        System.out.println(book);
+        System.out.println(JSON.toJSONString(book));
     }
 }
