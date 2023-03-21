@@ -3,9 +3,7 @@ package com.example.demo.xmlParser.dmo4jjaxb;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
-import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
-import org.dom4j.io.XMLWriter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Component;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -83,15 +80,16 @@ public class XmlUtils {
         InputStream inputStream = null;
         try {
             //byte 数组输出流
-            ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
-            //控制输出格式
-            OutputFormat outputFormat = new OutputFormat();
-            outputFormat.setEncoding("UTF-8");
-            //输出数据类
-            XMLWriter xmlWriter = new XMLWriter(byteOut, outputFormat);
-            xmlWriter.write(document);
-            byte[] byteArr = byteOut.toByteArray();
-            inputStream = new ByteArrayInputStream(byteArr);
+//            ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
+//            //控制输出格式
+//            OutputFormat outputFormat = new OutputFormat();
+//            outputFormat.setEncoding("UTF-8");
+//            //输出数据类
+//            XMLWriter xmlWriter = new XMLWriter(byteOut, outputFormat);
+//            xmlWriter.write(document);
+//            byte[] byteArr = byteOut.toByteArray();
+//            inputStream = new ByteArrayInputStream(byteArr);
+            inputStream = new ByteArrayInputStream(document.asXML().getBytes());
         } catch (Exception e) {
             e.printStackTrace();
         }
