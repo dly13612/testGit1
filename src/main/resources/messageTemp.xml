@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<File templateNo="000004">
+    <twoTags>
+        <twoTag twoTagName="twoTag1">
+            <threeVos>
+                <threeVo threeVoName="threeVo1">
+                    <strList>
+                        <str>threeStr1</str>
+                        <str>threeStr2</str>
+                    </strList>
+                </threeVo>
+                <threeVo threeVoName="threeVo11">
+                    <strList>
+                        <str>threeStr1</str>
+                        <str>threeStr2</str>
+                    </strList>
+                </threeVo>
+            </threeVos>
+        </twoTag>
+        <twoTag twoTagName="twoTag2">
+            <threeVos>
+                <threeVo threeVoName="threeVo2">
+                    <strList>
+                        <str>threeStr1</str>
+                        <str>threeStr2</str>
+                    </strList>
+                </threeVo>
+                <threeVo threeVoName="threeVo22">
+                    <strList>
+                        <str>threeStr1</str>
+                        <str>threeStr2</str>
+                    </strList>
+                </threeVo>
+            </threeVos>
+        </twoTag>
+    </twoTags>
+</File>

@@ -1,11 +1,17 @@
 package com.example.demo.xmlParser.jaxb;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * @Auther: KJ.Li
  * @Description:
  * @Date: Create in 2020/4/30
  * @Modified By:
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "ChildNode")
 public class BaseMessage {
     protected String ToUserName;
     protected String FromUserName;

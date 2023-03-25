@@ -1,18 +1,8 @@
 package com.example.demo.xmlParser;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
@@ -20,11 +10,10 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
-import org.xml.sax.InputSource;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import java.io.*;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class JsonToXml {
     public static void main(String[] args) throws Exception {
@@ -32,13 +21,13 @@ public class JsonToXml {
         //xml->json
 //        String jsonStr = xmlToJson("D:\\测试.xml", null);
 //        src/main/resources/static/测试.xml
-        String jsonStr = xmlToJson(ClassLoader.getSystemResource("bookSaxList.xml").getPath());
-        System.out.println(jsonStr);
+//        String jsonStr = xmlToJson(ClassLoader.getSystemResource("bookSaxList.xml").getPath());
+//        System.out.println(jsonStr);
 
         //json->xml
-//        String xmlstr = jsonToXml("{\"b_content\":{\"sdata\":\"Ps/DPJnZZPN6QQJQodY3+hK6PWCF3/2oi3DJPnFEXgKDrXX5rHT7q/I0nQPAruuBbQRfErnenQNvPpbf/lXl690qtye0/ZEuDs0ByFdFAGffQalB+Ij3lLUMDPz=\",\"userobj\":{\"uid\":\"ma000\",\"realtype\":\"DC\",\"cn\":\"法人用户2\",\"tokenid\":\"\",\"usertype\":\"2\",\"link_person_name\":\"联系人2\",\"isreal\":\"true\",\"telephonenumber\":\"13*******21\",\"mail\":\"ceshi@123.com\",\"idcardtype\":\"10\",\"createtime\":\"20150618191221\",\"extproperties\":[\"address=广东省广州市天河区天河北路XXX号\",\"legal_code=440***********033\",\"ent_type=-1\",\"link_person_code=350************14\",\"origin=gdbs\",\"card_type_two_num=-1\",\"cert_ca=-1\",\"accout_type=2\",\"account_uid=2\",\"comm_code=-1\",\"unit_type=-1\",\"legal_id_type=10\",\"landline=-1\",\"tax_code=-1\",\"cert_notafter=-1\",\"card_type_one_num=-1\",\"local_user=-1\",\"legal_person=郑**\",\"link_person_type=10\",\"card_type_three=-1\",\"card_type_two=-1\",\"card_type_three_num=-1\",\"cert_data=-1\",\"area=guangzhou\",\"uversion=3.0\",\"cert_notbefore=-1\",\"card_type_one=-1\",\"user_typeext=2\"],\"idcardnumber\":\"11***************23\",\"useridcode\":\"38c97fa1ee2e43d4a664cffc4554cde4\",\"creditable_level_of_account_way\":\"L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75\",\"creditable_level_of_account\":\"L3\"},\"pareobj\":{\"uid\":\"mayintao\",\"realtype\":\"DC\",\"cn\":\"单位用户2\",\"tokenid\":\"\",\"usertype\":\"2\",\"link_person_name\":\"联系人2\",\"isreal\":\"true\",\"telephonenumber\":\"13*******21\",\"mail\":\"ceshi@123.com\",\"idcardtype\":\"50\",\"createtime\":\"20150618191221\",\"extproperties\":[\"address=广东省广州市东山区\",\"legal_id_type=-1\",\"link_person_type=-1\",\"legal_code=-1\",\"origin=gdbs\",\"tax_code=-1\",\"legal_person=-1\",\"area=shenzhen\",\"link_person_code=-1\",\"user_typeext=2\",\"uversion=1.0\"],\"idcardnumber\":\"456787654\",\"useridcode\":\"75c91fagrr2e67d4a169cfmc8735ctrf\",\"creditable_level_of_account_way\":\"L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75\",\"creditable_level_of_account\":\"L3\"},\"user_creditable_level\":{\"creditable_level_of_account_way\":\"L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75\",\"creditable_level_of_account_way_list\":[{\"auth_time\":\"2018-02-28 16:45:26\",\"uniqueid\":\"***86f93fb61***\",\"user_name\":\"郭**\",\"auth_identification\":\"2088******653\",\"identity_level\":\"L2\",\"credential_no\":\"44088******75\",\"way_code\":\"YSS\"},{\"auth_time\":null,\"uniqueid\":\"***764486f93fb61212***\",\"user_name\":\"郭**\",\"auth_identification\":\"44088******75\",\"identity_level\":\"L0\",\"credential_no\":\"44088******75\",\"way_code\":\"IDV\"},{\"auth_time\":\"2018-02-13 17:12:31\",\"uniqueid\":\"*****764486f93fb612122*****\",\"user_name\":\"郭**\",\"auth_identification\":\"44088******75\",\"identity_level\":\"L3\",\"credential_no\":\"44088******75\",\"way_code\":\"GW\"}],\"creditable_level_of_account\":\"L3\"}},\"time_stamp\":\"20200821\",\"version \":\"v1\",\"sign\":\"rxf0MFT7eQqYgYKWtgzNBi6mhS2tbqkPgI \"}");
-//        System.out.println(xmlstr);
-//        createXMLFile(formatXML(xmlstr), "test");
+        String xmlstr = jsonToXml("{\"b_content\":{\"sdata\":\"Ps/DPJnZZPN6QQJQodY3+hK6PWCF3/2oi3DJPnFEXgKDrXX5rHT7q/I0nQPAruuBbQRfErnenQNvPpbf/lXl690qtye0/ZEuDs0ByFdFAGffQalB+Ij3lLUMDPz=\",\"userobj\":{\"uid\":\"ma000\",\"realtype\":\"DC\",\"cn\":\"法人用户2\",\"tokenid\":\"\",\"usertype\":\"2\",\"link_person_name\":\"联系人2\",\"isreal\":\"true\",\"telephonenumber\":\"13*******21\",\"mail\":\"ceshi@123.com\",\"idcardtype\":\"10\",\"createtime\":\"20150618191221\",\"extproperties\":[\"address=广东省广州市天河区天河北路XXX号\",\"legal_code=440***********033\",\"ent_type=-1\",\"link_person_code=350************14\",\"origin=gdbs\",\"card_type_two_num=-1\",\"cert_ca=-1\",\"accout_type=2\",\"account_uid=2\",\"comm_code=-1\",\"unit_type=-1\",\"legal_id_type=10\",\"landline=-1\",\"tax_code=-1\",\"cert_notafter=-1\",\"card_type_one_num=-1\",\"local_user=-1\",\"legal_person=郑**\",\"link_person_type=10\",\"card_type_three=-1\",\"card_type_two=-1\",\"card_type_three_num=-1\",\"cert_data=-1\",\"area=guangzhou\",\"uversion=3.0\",\"cert_notbefore=-1\",\"card_type_one=-1\",\"user_typeext=2\"],\"idcardnumber\":\"11***************23\",\"useridcode\":\"38c97fa1ee2e43d4a664cffc4554cde4\",\"creditable_level_of_account_way\":\"L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75\",\"creditable_level_of_account\":\"L3\"},\"pareobj\":{\"uid\":\"mayintao\",\"realtype\":\"DC\",\"cn\":\"单位用户2\",\"tokenid\":\"\",\"usertype\":\"2\",\"link_person_name\":\"联系人2\",\"isreal\":\"true\",\"telephonenumber\":\"13*******21\",\"mail\":\"ceshi@123.com\",\"idcardtype\":\"50\",\"createtime\":\"20150618191221\",\"extproperties\":[\"address=广东省广州市东山区\",\"legal_id_type=-1\",\"link_person_type=-1\",\"legal_code=-1\",\"origin=gdbs\",\"tax_code=-1\",\"legal_person=-1\",\"area=shenzhen\",\"link_person_code=-1\",\"user_typeext=2\",\"uversion=1.0\"],\"idcardnumber\":\"456787654\",\"useridcode\":\"75c91fagrr2e67d4a169cfmc8735ctrf\",\"creditable_level_of_account_way\":\"L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75\",\"creditable_level_of_account\":\"L3\"},\"user_creditable_level\":{\"creditable_level_of_account_way\":\"L2@YSS@2088******653||L0@IDV@44088******75||L3@GW@44088******75\",\"creditable_level_of_account_way_list\":[{\"auth_time\":\"2018-02-28 16:45:26\",\"uniqueid\":\"***86f93fb61***\",\"user_name\":\"郭**\",\"auth_identification\":\"2088******653\",\"identity_level\":\"L2\",\"credential_no\":\"44088******75\",\"way_code\":\"YSS\"},{\"auth_time\":null,\"uniqueid\":\"***764486f93fb61212***\",\"user_name\":\"郭**\",\"auth_identification\":\"44088******75\",\"identity_level\":\"L0\",\"credential_no\":\"44088******75\",\"way_code\":\"IDV\"},{\"auth_time\":\"2018-02-13 17:12:31\",\"uniqueid\":\"*****764486f93fb612122*****\",\"user_name\":\"郭**\",\"auth_identification\":\"44088******75\",\"identity_level\":\"L3\",\"credential_no\":\"44088******75\",\"way_code\":\"GW\"}],\"creditable_level_of_account\":\"L3\"}},\"time_stamp\":\"20200821\",\"version \":\"v1\",\"sign\":\"rxf0MFT7eQqYgYKWtgzNBi6mhS2tbqkPgI \"}");
+        System.out.println(xmlstr);
+        createXMLFile(formatXML(xmlstr), "test");
     }
 
     /**

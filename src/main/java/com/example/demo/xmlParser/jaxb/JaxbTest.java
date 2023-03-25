@@ -17,7 +17,7 @@ public class JaxbTest {
 //        list.add(message1);
         String xmlStr = XmlUtils.convertToXml(message1);
         System.out.println(xmlStr);
-        BaseMessage message = XmlUtils.convertToJava("src/main/resources/jaxb.xml", BaseMessage.class);
-        System.out.println(message);
+//        BaseMessage message = XmlUtils.convertToJava("src/main/resources/jaxb.xml", BaseMessage.class);
+//        System.out.println(message);
     }
 }
